@@ -1,0 +1,46 @@
+/* Drive German — ultra-simple full-screen image page */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;           /* full viewport height */
+  background-image: url('../images/hero.jpg');
+  background-size: cover;      /* fill while preserving aspect */
+  background-position: center; /* keep the focal point centered */
+  background-repeat: no-repeat;
+}
+/* Optional subtle gradient to keep text legible */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.45));
+}
+.caption {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(2rem, 6vh, 6rem);
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+  width: min(92vw, 1200px);
+}
+.caption h1 {
+  margin: 0 0 .25em;
+  font-weight: 800;
+  letter-spacing: .04em;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+}
+.caption p {
+  margin: 0;
+  font-size: clamp(1rem, 2.4vw, 1.75rem);
+  opacity: 0.95;
+}
+/* Remove text entirely if you just want the image:
+   Delete the .caption block in index.html */
